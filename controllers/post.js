@@ -61,7 +61,7 @@ router.put('/:id', (req, res) => {
             res.send(err);
         } else {
             console.log(updatePost, "< put route response from db");
-            res.redirect('/post/' + req.params.id);
+            res.redirect('/post');
         }
     })
 })

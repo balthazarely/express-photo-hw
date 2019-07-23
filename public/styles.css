@@ -1,10 +1,38 @@
 .navbar-brand {
     font-weight: 700;
     font-size: 28px;
+    background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);
+    background: linear-gradient(to right, #F8FFAE, #43C6AC); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+    font-weight: 200;
+    font-size: 16px;
 }
 
 a {
     font-weight: 600;
     font-size: 24px;
+    color: #60A68C;
+}
+
+.date {
+    font-weight: 200;
+    font-size: 15px;
     color: #343A40;
+}
+
+.img-fluid {
+    height: auto;
+    width: 100%;
+    padding: 10px 0px;
+}
+
+.username-index {
+    font-weight: 700;
+    font-size: 16px;
+    color: #353C40;
+    font-style: italic;
 }

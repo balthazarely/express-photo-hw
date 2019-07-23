@@ -10,7 +10,7 @@
 </head>
 <body>
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">.pickle</a>
+            <a class="navbar-brand" href="/post">.pickle</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,6 +35,9 @@
                   </div>
                     <div class="col-md-8 py-3 px-lg-5  border bg-light">
                       <h2><%=post.title%></h2>
+                      <img src="<%=post.photo%>" class="img-fluid img" alt="Responsive image">
+                      <p class="date"> <%=post.date%></p>
+                      <p class="username-index" >By <%=post.username%></p>
                       <p><%=post.comments%></p>
                             <form action="/post/<%=post._id%>?_method=DELETE" method="POST">
                             <input type="submit" value="Delete Post"/>

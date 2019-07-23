@@ -10,7 +10,7 @@
 </head>
 <body>
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">.pickle</a>
+            <a class="navbar-brand" href="/post">.pickle</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,8 +34,7 @@
                     </div>
                     <div class="col-md-8 py-3 px-lg-5  border bg-light">
                     <h3>Edit your post</h3>
-                           <form action="/post" method="POST">
-                            <form action="/post/<%=post._id%>?_method=PUT" method="post">
+                        <form action="/post/<%=post._id%>?_method=PUT" method="POST">
                             <input type="text" name="title" value="<%=post.title%>"/><br/>
                             <input type="text" name="username" value="<%=post.username%>"/><br/>
                             <input type="text" name="date" value="<%=post.date%>"/><br/>
