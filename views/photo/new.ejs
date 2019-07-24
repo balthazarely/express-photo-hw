@@ -23,11 +23,16 @@
                   <a class="nav-link" href="/post/new">New Post</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/post/about">About</a>
+                  <a class="nav-link" href="/username">Users</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/username/new">Add Users</a>
                 </li>
               </ul>
             </div>
           </nav>
+
+
           <div class="container px-lg-5">
                 <div class="row mx-lg-n1">
                   <div class="col-md-2">
@@ -36,10 +41,14 @@
                     <h3>Let's add some photos!</h3>
                         <form action="/post" method="POST">
                             Tile: <input type="text" name="title" /><br/>
-                            Username: <input type="text" name="username" /><br/>
                             Date: <input type="text" name="date" /><br/>
                             Photo: <input type="text" name="photo" /><br/>
                             Comments: <input type="text" name="comments" /><br/>
+                              <select name="username">
+                                <%username.forEach(function(username){%>
+                                  <option value="<%=username._id%>"><%=username.username%></option>
+                                <%})%>
+                              </select>
                             <input type="submit" value="Post"/>
                         </form>    
                     </div>

@@ -23,7 +23,10 @@
                   <a class="nav-link" href="/post/new">New Post</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/post/about">About</a>
+                  <a class="nav-link" href="/username">Users</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/username/new">Add Users</a>
                 </li>
               </ul>
             </div>
@@ -37,7 +40,7 @@
                       <h2><%=post.title%></h2>
                       <img src="<%=post.photo%>" class="img-fluid img" alt="Responsive image">
                       <p class="date"> <%=post.date%></p>
-                      <p class="username-index" >By <%=post.username%></p>
+                      <p class="username-index" >By <%=post.username.username%></p>
                       <p><%=post.comments%></p>
                             <form action="/post/<%=post._id%>?_method=DELETE" method="POST">
                             <input type="submit" value="Delete Post"/>

@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/post');
+const Username = require('../models/username');
 
 //INDEX ROUTE
 router.get('/', async (req, res) => {
     try{
-        const foundPost = await Post.find()
+        const foundPost = await Post.find().populate('username')
         res.render('photo/index.ejs', {
         post: foundPost
     });
@@ -15,14 +16,17 @@ router.get('/', async (req, res) => {
 });
 
 //NEW ROUTE
-router.get('/new', (req, res) => {
-    res.render('photo/new.ejs');
+router.get('/new', async (req, res) => {
+    const username = await Username.find() 
+    res.render('photo/new.ejs', {
+        username: username
+    });
 })
 
 //SHOW ROUTE
 router.get('/:id', async (req, res) => {
     try{
-        const showPost = await Post.findById(req.params.id)
+        const showPost = await Post.findById(req.params.id).populate('username')
         res.render('photo/show.ejs', {
         post: showPost
     });
@@ -66,6 +70,7 @@ router.put('/:id', async (req, res) => {
 //CREATE ROUTE
 router.post('/', (req, res) => {
     Post.create(req.body, (err, createdPost) => {
+        console.log(createdPost)
         if(err) {
             res.send(err)
         } else {
