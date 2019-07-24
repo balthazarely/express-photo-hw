@@ -17,8 +17,10 @@
                 <div class="col-md-2">
                   </div>
                     <div class="col-md-8 py-3 px-lg-5  border bg-light">
-                      <h2><%=post.title%></h2>
+                      <h2 class="show-title"><%=post.title%></h2>
                       <img src="<%=post.photo%>" class="img-fluid img" alt="Responsive image">
+                      <p class="date"> <%=post.createdAt%></p>
+
                       <p class="date"> <%=post.date%></p>
                       <p class="username-index" >By <%=post.username.username%></p>
                       <p><%=post.comments%></p>

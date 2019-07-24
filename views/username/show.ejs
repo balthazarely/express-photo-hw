@@ -24,14 +24,15 @@
                          <form action="/username/<%=username._id%>?_method=DELETE" method="POST">
                             <input type="submit" class="btn btn-outline-info btn-sm btn-show" value="Delete User"/>
                         </form>
+                        
                         <%post.forEach(function(post){%>
                             <div class="text-show-container">
-                                <a href="/post/<%=post._id%>"> <%=post.title %> </a> <br/>
+                                <a class="username-index" href="/post/<%=post._id%>"> <%=post.title %> </a> <br/>
                             </div>
                             <div class="show-img-container">
                                 <img src="<%=post.photo%>" class="img-fluid show-pg-image" alt="Responsive image">
                             </div>
-                            <p class="date"> <%=post.date%></p>
+                            <p class="date"> <%=post.createdAt%></p>
                         <%})%>
                     </div>
                   <div class="col-md-2">

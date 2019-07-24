@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 //this is the schema
 const postSchema = new mongoose.Schema({
-    title: String,
-    date: Date,
-    photo: String,
+    title: { type: String, required: true },
+    createdAt: {type: Date, default: Date.now},
+    photo: {type: String, required: true},
     comments:String,
     username: {
         type: Schema.Types.ObjectId,

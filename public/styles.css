@@ -7,7 +7,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-.body {
+.container {
     -webkit-animation: fadein 1s;
     animation: fadein 1s;
 }
@@ -17,9 +17,6 @@ from { opacity: 0; }
 to   { opacity: 1; }
 }
 
-html {
-    animation: 1s linear 1s slidein;
-}
 
 
 .btn {
@@ -34,6 +31,12 @@ a {
     font-weight: 600;
     font-size: 24px;
     color: #60A68C;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 24px;
+    color: #60A68C;  
 }
 
 .date {
@@ -55,10 +58,12 @@ a {
     font-style: italic;
 }
 
-.text-show-container {
 
+
+.title-post:hover {
+    color: black;
+    text-decoration: none;
 }
-
 
 .show-img-container{
   width: 100%;

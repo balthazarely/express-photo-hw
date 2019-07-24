@@ -19,9 +19,8 @@
                     <div class="col-md-8 py-3 px-lg-5  border bg-light">
                     <h3>Let's add some photos!</h3>
                         <form action="/post" method="POST">
-                            Tile: <input type="text" name="title" /><br/>
-                            Date: <input type="text" name="date" /><br/>
-                            Photo: <input type="text" name="photo" /><br/>
+                            Tile (required): <input type="text" name="title" /><br/>
+                            Photo (required): <input type="text" name="photo" /><br/>
                             Comments: <input type="text" name="comments" /><br/>
                               <select name="username">
                                 <%username.forEach(function(username){%>

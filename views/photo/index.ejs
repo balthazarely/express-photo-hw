@@ -17,9 +17,8 @@
                 <div class="col-md-2">
                   </div>
                    <div class="col-md-8 py-3 px-lg-5  border bg-light">
-                      <a href="/post/<%=post[i]._id%>"><%=post[i].title%></a> 
+                   <a class="title-post" href="/post/<%=post[i]._id%>"><%=post[i].title%></a> 
                       <img src="<%=post[i].photo%>" class="img-fluid" alt="Responsive image">
-                      <p class="date"> <%=post[i].date%></p>
                       <p class="username-index" >By <%=post[i].username.username%></p>
                           <form action="/post/<%=post[i]._id%>">
                           <input type="submit" class="btn btn-outline-info btn-sm btn-show" value="Read More"/>
