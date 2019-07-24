@@ -5,7 +5,41 @@
     background: linear-gradient(to right, #F8FFAE, #43C6AC); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: .7s ease-out 0s 1 slideInFromTop;
 }
+
+.navbar-nav {
+    animation: .7s ease-out 0s 1 slideInFromTop;
+}
+
+.navbar-expand-lg {
+    animation: .3s ease-out 0s 1 slideInFromTop;
+}
+
+
+@keyframes logoFadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+    }
+    
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
 
 .container {
     -webkit-animation: fadein 1s;
@@ -17,11 +51,16 @@ from { opacity: 0; }
 to   { opacity: 1; }
 }
 
-
-
 .btn {
     margin: 5px;
+    float: right;
 }
+
+.btn-home {
+    margin: 5px;
+    float: left;
+}
+
 .nav-link {
     font-weight: 200;
     font-size: 16px;
@@ -57,8 +96,6 @@ h2 {
     color: #353C40;
     font-style: italic;
 }
-
-
 
 .title-post:hover {
     color: black;

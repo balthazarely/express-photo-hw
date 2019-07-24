@@ -3,6 +3,9 @@ const router = express.Router();
 const Post = require('../models/post');
 const Username = require('../models/username');
 
+
+
+
 //INDEX ROUTE
 router.get('/', async (req, res) => {
     try{

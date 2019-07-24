@@ -15,10 +15,13 @@
             <div class="container px-lg-10">
               <div class="row mx-lg-n1">
                 <div class="col-md-2">
-                  </div>
+                </div>
+                <script>
+                </script>
                    <div class="col-md-8 py-3 px-lg-5  border bg-light">
                    <a class="title-post" href="/post/<%=post[i]._id%>"><%=post[i].title%></a> 
-                      <img src="<%=post[i].photo%>" class="img-fluid" alt="Responsive image">
+                      <a href="/post/<%=post[i]._id%>"><img src="<%=post[i].photo%>" class="img-fluid" alt="Responsive image"></a>
+                      <p class="date"> <%=post[i].createdAt%></p>
                       <p class="username-index" >By <%=post[i].username.username%></p>
                           <form action="/post/<%=post[i]._id%>">
                           <input type="submit" class="btn btn-outline-info btn-sm btn-show" value="Read More"/>
