@@ -46,17 +46,17 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-// //EDIT ROUTE
-// router.get('/:id/edit', async (req, res) => {
-//     try{
-//         const foundPost = await Post.findById(req.params.id);
-//         res.render('photo/edit.ejs', {
-//         post: foundPost 
-//         })
-//     }catch(err){
-//         res.send(err);
-//     }
-// });
+//EDIT ROUTE
+router.get('/:id/edit', async (req, res) => {
+    try{
+        const foundUsername = await Username.findById(req.params.id);
+        res.render('username/edit.ejs', {
+        username: foundUsername 
+        })
+    }catch(err){
+        res.send(err);
+    }
+});
 
 // //UPDATE ROUTE
 // router.put('/:id', async (req, res) => {

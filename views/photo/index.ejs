@@ -40,7 +40,7 @@
                       <a href="/post/<%=post[i]._id%>"><%=post[i].title%></a> 
                       <img src="<%=post[i].photo%>" class="img-fluid" alt="Responsive image">
                       <p class="date"> <%=post[i].date%></p>
-                      <p class="username-index" >By <%=post[i].username.username%></p>
+                      <p class="username-index" >By <%=username[i].username.username%></p>
                           <form action="/post/<%=post[i]._id%>">
                           <input type="submit" class="btn btn-outline-info btn-sm btn-show" value="Read More"/>
                           </form>
