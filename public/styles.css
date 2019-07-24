@@ -36,3 +36,24 @@ a {
     color: #353C40;
     font-style: italic;
 }
+
+.text-show-container {
+
+}
+
+
+.show-img-container{
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+.show-pg-image {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+}

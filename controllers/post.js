@@ -7,8 +7,10 @@ const Username = require('../models/username');
 router.get('/', async (req, res) => {
     try{
         const foundPost = await Post.find().populate('username')
+        const indexPageUsername = await Username.find()
         res.render('photo/index.ejs', {
-        post: foundPost
+        post: foundPost,
+        username: indexPageUsername
     });
     }catch(error){
         res.send(error);

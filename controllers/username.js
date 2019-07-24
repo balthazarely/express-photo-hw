@@ -35,15 +35,16 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// //DELETE ROUTE
-// router.delete('/:id', async (req, res) => {
-//     try {
-//         await Post.findOneAndDelete(req.params.id);
-//         res.redirect('/post');
-//     } catch(err){
-//         res.send(err);
-//     }
-// });
+//DELETE ROUTE
+router.delete('/:id', async (req, res) => {
+    try {
+        await Username.findOneAndDelete(req.params.id);
+        res.redirect('/username');
+        
+    } catch(err){
+        res.send(err);
+    }
+});
 
 // //EDIT ROUTE
 // router.get('/:id/edit', async (req, res) => {

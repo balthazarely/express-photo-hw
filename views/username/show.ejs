@@ -39,7 +39,13 @@
                     <div class="col-md-8 py-3 px-lg-5  border bg-light">
                       <h2>Articles by <%=username.username%></h2>
                         <%post.forEach(function(post){%>
-                            <a href="/post/<%=post._id%>"> <%=post.title %> </a>         
+                            <div class="text-show-container">
+                                <a href="/post/<%=post._id%>"> <%=post.title %> </a> <br/>
+                            </div>
+                            <div class="show-img-container">
+                                <img src="<%=post.photo%>" class="img-fluid show-pg-image" alt="Responsive image">
+                            </div>
+                            <p class="date"> <%=post.date%></p>
                         <%})%>
                     </div>
                   <div class="col-md-2">

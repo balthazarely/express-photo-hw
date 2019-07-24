@@ -38,11 +38,10 @@
                     <div class="col-md-8 py-3 px-lg-5  border bg-light">
                     <h3>Edit your post</h3>
                         <form action="/post/<%=post._id%>?_method=PUT" method="POST">
-                            <input type="text" name="title" value="<%=post.title%>"/><br/>
-                            <input type="text" name="username" value="<%=post.username%>"/><br/>
-                            <input type="text" name="date" value="<%=post.date%>"/><br/>
-                            <input type="text" name="photo" value="<%=post.photo%>"/><br/>
-                            <input type="text" name="comments" value="<%=post.comments%>"/><br/>
+                            Title: <input type="text" name="title" value="<%=post.title%>"/><br/>
+                            Date: <input type="text" name="date" value="<%=post.date%>"/><br/>
+                            Photo Link: <input type="text" name="photo" value="<%=post.photo%>"/><br/>
+                            Comments: <input type="text" name="comments" value="<%=post.comments%>"/><br/>
                             <input type="submit" value="Update Posting"/>
                         </form> 
                     </div>

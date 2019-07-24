@@ -39,6 +39,9 @@
                   </div>
                     <div class="col-md-8 py-3 px-lg-5  border bg-light">
                       <a href="/username/<%=username[i]._id%>"><%=username[i].username%></a>
+                        <form action="/username/<%=username[i]%>?_method=DELETE" method="POST">
+                            <input type="submit" value="Delete User"/>
+                        </form>
                     </div>
                   <div class="col-md-2">
                 </div>
