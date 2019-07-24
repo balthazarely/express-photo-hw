@@ -3,16 +3,15 @@ const router = express.Router();
 const Post = require('../models/post');
 
 //INDEX ROUTE
-router.get('/', (req, res) => {
-    Post.find({}, (err, foundPost) => {
-        if(err) {
-            res.send(err);
-        } else {
-            res.render('photo/index.ejs', {
-                post: foundPost
-            });
-        }
+router.get('/', async (req, res) => {
+    try{
+        const foundPost = await Post.find()
+        res.render('photo/index.ejs', {
+        post: foundPost
     });
+    }catch(error){
+        res.send(error);
+    }
 });
 
 //NEW ROUTE
@@ -21,50 +20,48 @@ router.get('/new', (req, res) => {
 })
 
 //SHOW ROUTE
-router.get('/:id', (req, res) => {
-    Post.findById(req.params.id, (err, foundPost) => {
+router.get('/:id', async (req, res) => {
+    try{
+        const showPost = await Post.findById(req.params.id)
         res.render('photo/show.ejs', {
-            post: foundPost
-        })
-    })
-})
+        post: showPost
+    });
+    }catch(error){
+        res.send(error);
+    }
+});
 
 //DELETE ROUTE
-router.delete('/:id', (req, res) => {
-    Post.findOneAndDelete(req.params.id, (err, response) => {
-        if(err) {
-            res.send(err);
-        } else {
-            console.log(response, "<- this is the delete route");
-            res.redirect('/post');
-        }
-    })
-})
+router.delete('/:id', async (req, res) => {
+    try {
+        await Post.findOneAndDelete(req.params.id);
+        res.redirect('/post');
+    } catch(err){
+        res.send(err);
+    }
+});
 
 //EDIT ROUTE
-router.get('/:id/edit', (req, res) => {
-    Post.findById(req.params.id, (err, foundPost) => {
-        if(err) {
-            res.send(err);
-        } else {
-            res.render('photo/edit.ejs', {
-                post: foundPost 
-            })
-        }
-    })
-})
+router.get('/:id/edit', async (req, res) => {
+    try{
+        const foundPost = await Post.findById(req.params.id);
+        res.render('photo/edit.ejs', {
+        post: foundPost 
+        })
+    }catch(err){
+        res.send(err);
+    }
+});
 
 //UPDATE ROUTE
-router.put('/:id', (req, res) => {
-    Post.findByIdAndUpdate(req.params.id, req.body, (err, updatePost) => {
-        if(err) {
-            res.send(err);
-        } else {
-            console.log(updatePost, "< put route response from db");
-            res.redirect('/post');
-        }
-    })
-})
+router.put('/:id', async (req, res) => {
+    try{ 
+        const updatedPost = await Post.findByIdAndUpdate(req.params.id, req.body)
+        res.redirect('/post');
+    }catch(err) {
+        res.send(err);
+    }
+});
 
 //CREATE ROUTE
 router.post('/', (req, res) => {
