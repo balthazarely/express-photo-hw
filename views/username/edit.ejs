@@ -9,28 +9,8 @@
     <title>Document</title>
 </head>
 <body>
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/post">.pickle</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/post">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/post/new">New Post</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/username">Users</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/username/new">Add Users</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+  <%- include ../partials/_navbar %>
+
           <div class="container px-lg-5">
                 <div class="row mx-lg-n1">
                   <div class="col-md-2">
@@ -39,7 +19,7 @@
                     <h3>Edit Username</h3>
                         <form action="/username/<%=username._id%>?_method=PUT" method="POST">
                             Username: <input type="text" name="username" value="<%=username.username%>"/><br/>
-                            <input type="submit" value="Update Username"/>
+                            <input type="submit" class="btn btn-outline-info btn-sm btn-show" value="Update Username"/>
                         </form> 
                     </div>
                     <div class="col-md-2">

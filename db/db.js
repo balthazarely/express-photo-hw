@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const connectionString = 'mongodb://localhost/photosharingsite2';
+const connectionString = 'mongodb://localhost/photosharingsite5';
 
 // just using it cause mongoose tolm me too....
 mongoose.connect(connectionString, {

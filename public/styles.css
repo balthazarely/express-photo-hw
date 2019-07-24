@@ -7,6 +7,24 @@
     -webkit-text-fill-color: transparent;
 }
 
+.body {
+    -webkit-animation: fadein 1s;
+    animation: fadein 1s;
+}
+
+@keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+html {
+    animation: 1s linear 1s slidein;
+}
+
+
+.btn {
+    margin: 5px;
+}
 .nav-link {
     font-weight: 200;
     font-size: 16px;

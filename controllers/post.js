@@ -52,8 +52,10 @@ router.delete('/:id', async (req, res) => {
 router.get('/:id/edit', async (req, res) => {
     try{
         const foundPost = await Post.findById(req.params.id);
+        const changeUsername = await Username.find()
         res.render('photo/edit.ejs', {
-        post: foundPost 
+        post: foundPost,
+        username: changeUsername
         })
     }catch(err){
         res.send(err);

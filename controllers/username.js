@@ -38,7 +38,8 @@ router.get('/:id', async (req, res) => {
 //DELETE ROUTE
 router.delete('/:id', async (req, res) => {
     try {
-        await Username.findOneAndDelete(req.params.id);
+        await Username.findByIdAndDelete(req.params.id)
+        await Post.remove({username:req.params.id})
         res.redirect('/username');
         
     } catch(err){
