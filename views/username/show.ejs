@@ -38,6 +38,12 @@
                   </div>
                     <div class="col-md-8 py-3 px-lg-5  border bg-light">
                       <h2>Articles by <%=username.username%></h2>
+                        <form action="/username/<%=username._id%>/edit">
+                        <input type="submit" value="Edit"/>
+                        </form>
+                         <form action="/username/<%=username._id%>?_method=DELETE" method="POST">
+                            <input type="submit" value="Delete User"/>
+                        </form>
                         <%post.forEach(function(post){%>
                             <div class="text-show-container">
                                 <a href="/post/<%=post._id%>"> <%=post.title %> </a> <br/>

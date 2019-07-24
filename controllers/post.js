@@ -29,6 +29,7 @@ router.get('/new', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try{
         const showPost = await Post.findById(req.params.id).populate('username')
+        console.log(showPost)
         res.render('photo/show.ejs', {
         post: showPost
     });
