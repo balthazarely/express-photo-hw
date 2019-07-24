@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Username = require('../models/username');
-// const Post = require('../models/post');
+const Post = require('../models/post');
 
 //INDEX ROUTE
 router.get('/', async (req, res) => {
@@ -19,17 +19,21 @@ router.get('/', async (req, res) => {
 router.get('/new', async (req, res) => {
     res.render('username/new.ejs');
 })
-// //SHOW ROUTE
-// router.get('/:id', async (req, res) => {
-//     try{
-//         const showPost = await Post.findById(req.params.id)
-//         res.render('photo/show.ejs', {
-//         post: showPost
-//     });
-//     }catch(error){
-//         res.send(error);
-//     }
-// });
+
+//SHOW ROUTE
+router.get('/:id', async (req, res) => {
+    try{
+        const showUsername = await Username.findById(req.params.id)
+        const userPosts = await Post.find({username: req.params.id});
+        res.render('username/show.ejs', {
+            username: showUsername,
+            post: userPosts
+
+    });
+    }catch(error){
+        res.send(error);
+    }
+});
 
 // //DELETE ROUTE
 // router.delete('/:id', async (req, res) => {
