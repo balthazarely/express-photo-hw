@@ -5,7 +5,7 @@
     background: linear-gradient(to right, #F8FFAE, #43C6AC); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: .7s ease-out 0s 1 slideInFromTop;
+    animation: .6s ease-out 0s 1 slideInFromTop;
 }
 
 .navbar-nav {
@@ -13,7 +13,7 @@
 }
 
 .navbar-expand-lg {
-    animation: .3s ease-out 0s 1 slideInFromTop;
+    animation: .4s ease-out 0s 1 slideInFromTop;
 }
 
 
@@ -116,4 +116,8 @@ h2 {
     left: -9999px;
     right: -9999px;
     margin: auto;
+}
+
+.comment {
+    height: 100px;
 }
